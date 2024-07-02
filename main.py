@@ -38,6 +38,7 @@ current_user = fastapi_users.current_user()
 def protected_route(user: User = Depends(current_user)):
     return f"Hello, {user.email}"
 
+
 @app.get("/unprotected-route")
 def unprotected_route():
     return f"Hello, anonym"
